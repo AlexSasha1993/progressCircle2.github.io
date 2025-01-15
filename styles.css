@@ -1,0 +1,112 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  gap: 20px;
+}
+
+.progress {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #fff; /* Белый фон */
+  gap: 60px;
+}
+
+.progress-bar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(#007bff 0%, gray 0%);
+  mask: radial-gradient(closest-side, transparent 74.95%, black 75%);
+  -webkit-mask: radial-gradient(closest-side, transparent 74.95%, black 75%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ratate-bar {
+  animation: rotate 2s linear infinite;
+}
+
+.progress-controls {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 20px;
+  column-gap: 10px;
+  align-items: center;
+  & label {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  & input[type='number'] {
+    width: 48px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  & input[type='number']::-webkit-outer-spin-button,
+  & input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  & input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  /* Переключатели */
+  & input[type='checkbox'] {
+    appearance: none;
+    width: 53px;
+    height: 32px;
+    background-color: #eef2f5;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  & input[type='checkbox']:checked {
+    background-color: #005bfe;
+  }
+
+  & input[type='checkbox']::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  & input[type='checkbox']:checked::before {
+    transform: translateX(20px);
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .progress {
+    display: flex;
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Circle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="progress-one"></div>
+    <div id="progress-two"></div>
+
+    <script src="app.js"></script>
+    <script>
+      const progressOne = createProgressCircle('progress-one', {
+        animate: false,
+        hide: false,
+        controls: true,
+      });
+      progressOne.setValue(0);
+    </script>
+  </body>
+</html>
