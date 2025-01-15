@@ -24,7 +24,7 @@ function createProgressCircle(
   input.max = 100;
   input.value = 0;
 
-  // Хранит текущее значение абобас
+  // Хранит текущее значение 
   let currentValue = 0;
   //   Глобальное состояние интервала
   let interval;
